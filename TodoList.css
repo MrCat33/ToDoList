@@ -1,0 +1,178 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+h1,h2,h3,span,li,ul,input{
+	font-family:'Songti SC','STIX',serif;
+}
+ul li{
+	list-style: none;
+}
+
+a,a:hover{
+	text-decoration: none;
+	color: black;
+}
+
+.page-top,
+.page-content{
+	height: 150px;
+}
+.page-content{
+	display: flex;
+	justify-content: center;
+}
+.page-content h2{
+	font-family: georgia;
+	color: rgb(155,26,59);
+	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), color-stop(40%, rgba(0, 0, 0, 0.91)),to(rgba(0, 0, 0, 0.83)));
+	font-size: 80px;
+	padding-top: 60px;
+	position:relative;
+}
+.page-content h2:after{
+	position:absolute;
+	left: 0px;
+	content:"ToDo List";
+	color: rgba(247,44,44,0.97);
+	-webkit-mask-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.32)), color-stop(40%, rgba(0, 0, 0, 0.48)),to(rgb(0, 0, 0)));
+}
+.main{
+	width: 56%;
+	margin: 0 auto;
+	position: relative;
+}
+.action a{
+	margin: 0 8px;
+}
+.action a.active{
+	background-color: rgba(243,43,43,0.82);
+	color: white;
+	padding: 2px;
+}
+input.task-input{
+	outline: none;
+	font-size: 22px;
+	width: 98%;
+	padding-left: 10px;
+	height: 2em;
+	margin-top: 20px;
+}
+.btn-input{
+	cursor: pointer;
+	outline: none;
+	color: #43b0f7;
+	font-size: 35px;
+	background: transparent;
+	border-color: transparent;
+	right: 17px;
+	top: 45px;
+	position: absolute;
+	height: 44px;
+	width: 44px;
+}
+.completed label{
+	text-decoration: line-through;
+	color: #777777;
+}
+.task-count{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+.tasks{
+	margin-top: 20px;
+}
+.big-title{
+	margin-top: 20px;
+}
+.todo{
+	font-size: 22px;
+	line-height: 2em;
+	margin: 10px;
+	border-bottom: 1px solid #f1f1f1;
+}
+.view{
+	height: 46px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.destroy{
+	color: #e41616;
+	font-size: 26px;
+	border: 1px solid transparent;
+	background-color: transparent;
+	outline: none;
+	cursor: pointer;
+	margin-right: 20px;
+}
+.word{
+	display: flex;
+	align-items: center;
+}
+li.editing .view{
+	margin-left: 34px;
+	outline: none;
+	display: block;
+	height: 42px;
+	width: 80%;
+	font-size: 22px;
+}
+input.edit{
+	display: none;
+}
+input.show{
+	display: block;
+}
+.todo-list li .toggle{
+	outline: none;
+	height: auto;
+	margin: auto 0;
+	border: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.toggle:after{
+	content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 -28 100 135"><circle cx="50" cy="50" r="40" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+}
+.toggle:checked:after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 -28 100 135"><circle cx="50" cy="50" r="40" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');   
+}
+@media screen and(max-width:1024px){
+	.main{
+		width: 90%;
+	}
+	label{
+		padding-left: 26px;
+	}
+	.btn-input{
+		cursor: pointer;
+		outline: none;
+		color: #43b0f7;
+		font-size: 35px;
+		background: transparent;
+		border-color: transparent;
+		right: 17px;
+		top: 48px;
+		position: absolute;
+		height: 44px;
+		width: 44px;
+	}
+	.toggle:after {
+	    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 -28 100 135"><circle cx="50" cy="50" r="40" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+		outline: none;
+	    background-color: transparent;
+	}
+	.toggle:checked:after {
+	    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 -28 100 135"><circle cx="50" cy="50" r="40" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');   
+		outline: none;
+	    background-color: transparent;
+    }
+    .todo-list li .toggle{
+    	outline: none;
+    	background-color: transparent;
+    	-webkit-appearance: none;
+    	appearance: none;
+    }
+}
